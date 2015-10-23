@@ -1,0 +1,45 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= text_input f, :subject, class: "form-control", placeholder: "Subject" %>
+  </div>
+
+  <div class="form-group">
+    <%= textarea f, :description, class: "form-control", placeholder: "Description" %>
+  </div>
+
+  <div class="form-group">
+    <%= text_input f, :tracker_link, class: "form-control", placeholder: "Tracker Link" %>
+  </div>
+
+  <div class="form-group">
+    <%= text_input f, :github_link, class: "form-control", placeholder: "Github Link" %>
+  </div>
+
+  <div class="form-group">
+    <%= text_input f, :requested_by, class: "form-control", placeholder: "Requested By" %>
+  </div>
+
+  <div class="form-group">
+    <%= text_input f, :reviewed_by, class: "form-control", placeholder: "Reviewed By" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :status, "Status", class: "control-label" %>
+    <%= select f, :status, valid_statuses, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-danger col-xs-12" %>
+  </div>
+<% end %>

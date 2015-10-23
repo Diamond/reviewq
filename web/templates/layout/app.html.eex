@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Teladoc Code Review Queue</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <div class="container" role="main">
+      <div class="header">
+        <ul class="nav nav-pills pull-right navbar">
+          <li><h4>Code Reviews</h4></li>
+          <li><%= link "All",      to: review_path(@conn, :index) %></li>
+          <li><%= link "Pending",  to: review_path(@conn, :index, %{"status" => "Pending"}) %></li>
+          <li><%= link "Approved", to: review_path(@conn, :index, %{"status" => "Approved"}) %></li>
+          <li><%= link "Rejected", to: review_path(@conn, :index, %{"status" => "Rejected"}) %></li>
+        </ul>
+        <span class="logo"></span>
+      </div>
+
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+      <%= @inner %>
+
+    </div> <!-- /container -->
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<div class="review row">
+  <div class="header bg-primary text-center">
+    <%= @review.subject %>
+  </div>
+  <div class="body bg-info">
+    <div class="row">
+      <div class="col-xs-8">
+        <h3><%= @review.status %></h3>
+      </div>
+      <div class="col-xs-4 text-right actions">
+        <%= link "Edit", to: review_path(@conn, :edit, @review), class: "btn btn-primary" %>
+        <%= link "Delete", to: review_path(@conn, :delete, @review), method: :delete, class: "btn btn-danger", data: [confirm: "This will delete the review request! Do you want to continue?"] %>
+      </div>
+    </div>
+    <div class="row description">
+      <%= @review.description %>
+    </div>
+    <div class="row links">
+      <div class="col-xs-6 text-left">
+        Github Link: <%= link @review.github_link, to: @review.github_link %>
+      </div>
+      <div class="col-xs-6 text-right">
+        Tracker Link: <%= link @review.tracker_link, to: @review.tracker_link %>
+      </div>
+    </div>
+    <div class="row footer">
+      <div class="col-xs-6">
+        Requested by <strong><%= @review.requested_by %></strong>
+      </div>
+      <%= if @review.reviewed_by do %>
+        <div class="reviewed_by col-xs-6 text-right">
+          Reviewed by <strong><%= @review.reviewed_by %></strong>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

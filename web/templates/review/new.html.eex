@@ -1,0 +1,8 @@
+<div class="container new_review">
+  <div class="header row bg-primary text-center">
+    New review
+  </div>
+  <div class="form row">
+    <%= render "form.html", changeset: @changeset, action: review_path(@conn, :create) %>
+  </div>
+</div>
