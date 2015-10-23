@@ -44,9 +44,9 @@ defmodule Reviewq.ReviewControllerTest do
   end
 
   test "shows chosen resource", %{conn: conn} do
-    review = Repo.insert! %Review{}
+    review = Repo.insert!(Review.changeset(%Review{}, @valid_attrs))
     conn = get conn, review_path(conn, :show, review)
-    assert html_response(conn, 200) =~ "Show review"
+    assert html_response(conn, 200) =~ review.subject
   end
 
   test "renders page not found when id is nonexistent", %{conn: conn} do

@@ -16,12 +16,15 @@
       <div class="header">
         <ul class="nav nav-pills pull-right navbar">
           <li><h4>Code Reviews</h4></li>
+          <li>&nbsp;</li>
           <li><%= link "All",      to: review_path(@conn, :index) %></li>
           <li><%= link "Pending",  to: review_path(@conn, :index, %{"status" => "Pending"}) %></li>
           <li><%= link "Approved", to: review_path(@conn, :index, %{"status" => "Approved"}) %></li>
           <li><%= link "Rejected", to: review_path(@conn, :index, %{"status" => "Rejected"}) %></li>
         </ul>
-        <span class="logo"></span>
+        <div>
+          <a class="logo" href="/">&nbsp;</a>
+        </div>
       </div>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
@@ -31,5 +34,10 @@
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <div class="container">
+      <div class="row text-center footer col-xs-12">
+        <small>A small service provided by your friendly Technowizards.&trade;</small>
+      </div>
+    </div>
   </body>
 </html>
