@@ -1,6 +1,8 @@
-<h2>Edit review</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: review_path(@conn, :update, @review) %>
-
-<%= link "Back", to: review_path(@conn, :index) %>
+<div class="container new_review">
+  <div class="header row bg-primary text-center">
+    Edit review
+  </div>
+  <div class="form row">
+    <%= render "form.html", changeset: @changeset, action: review_path(@conn, :update, @review) %>
+  </div>
+</div>
