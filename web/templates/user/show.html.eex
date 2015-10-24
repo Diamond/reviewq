@@ -1,0 +1,28 @@
+<h2>Show user</h2>
+
+<ul>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </li>
+
+  <li>
+    <strong>Password digest:</strong>
+    <%= @user.password_digest %>
+  </li>
+
+  <li>
+    <strong>Score:</strong>
+    <%= @user.score %>
+  </li>
+
+  <li>
+    <strong>Admin:</strong>
+    <%= @user.admin %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: user_path(@conn, :edit, @user) %>
+<%= link "Back", to: user_path(@conn, :index) %>
