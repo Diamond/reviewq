@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h2>Welcome to the Teladoc Code Review Queue!</h2>
+  <h2>Welcome to ReviewQ!</h2>
   <h3 class="text-left">Status:</h3>
   <ul class="lead text-left">
     <li><%= @pending %> Code Reviews Pending</li>
