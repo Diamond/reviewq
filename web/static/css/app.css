@@ -25,12 +25,13 @@ form.link, form.button {
   border-bottom: 1px solid #e5e5e5;
 }
 .logo {
-  width: 356px;
-  height: 83px;
+  width: 178px;
+  height: 40px;
   display: inline-block;
-  margin-bottom: 1em;
-  background-image: url("/images/reviewq-logo.png");
-  background-size: 356px 83px;
+  margin-top: 5px;
+  margin-left: 5px;
+  background-image: url("/images/reviewq-logo-white.png");
+  background-size: 178px 40px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -128,3 +129,7 @@ form.link, form.button {
 .main {
   margin-top: 50px;
 }
+
+.red { color: #f00; }
+
+#main-content { margin-top: 50px; }

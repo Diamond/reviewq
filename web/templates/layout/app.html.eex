@@ -12,23 +12,24 @@
   </head>
 
   <body>
-    <div class="container" role="main">
-      <div class="header">
-        <div class="row">
-          <div class="brand text-center">
-            <a href="/" class="logo"></a>
-          </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="/">
+            <div class="logo"></div>
+          </a>
         </div>
-        <ul class="nav nav-pills pull-right navbar">
-          <li><h4>Code Reviews:</h4></li>
-          <li>&nbsp;</li>
+        <ul class="nav navbar-nav pull-right">
           <li><%= link "All",      to: review_path(@conn, :index) %></li>
           <li><%= link "Pending",  to: review_path(@conn, :index, %{"status" => "Pending"}) %></li>
           <li><%= link "Approved", to: review_path(@conn, :index, %{"status" => "Approved"}) %></li>
           <li><%= link "Rejected", to: review_path(@conn, :index, %{"status" => "Rejected"}) %></li>
+          <li><%= link "Sign In", to: "/", class: "red" %></li>
         </ul>
       </div>
+    </nav>
 
+    <div id="main-content" class="container" role="main">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
