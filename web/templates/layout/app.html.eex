@@ -27,7 +27,6 @@
           <li><%= link "Approved", to: review_path(@conn, :index, %{"status" => "Approved"}) %></li>
           <li><%= link "Rejected", to: review_path(@conn, :index, %{"status" => "Rejected"}) %></li>
         </ul>
-
       </div>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
