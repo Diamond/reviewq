@@ -1,9 +1,17 @@
 <div class="row">
+  <%= form_for @changeset, review_path(@conn, :create), fn f -> %>
+    <div class="row">
+      <div class="form-group col-xs-8">
+        <%= text_input f, :github_link, class: "form-control", placeholder: "Add Github Link for Review" %>
+        <%= hidden_input f, :status, value: "Pending" %>
+      </div>
+      <div class="form-group col-xs-4">
+        <%= submit "Submit", class: "btn btn-danger col-xs-12" %>
+      </div>
+    </div>
+  <% end %>
   <div class="col-xs-8">
     <h2><%= @status %> Code Reviews</h2>
-  </div>
-  <div class="new_review col-xs-4 text-right">
-    <%= link "New review", to: review_path(@conn, :new), class: "btn btn-danger" %>
   </div>
   <div class="review_list col-xs-12">
     <%= for review <- @reviews do %>

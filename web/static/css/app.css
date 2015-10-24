@@ -114,9 +114,13 @@ form.link, form.button {
 }
 
 .navbar li {
-  margin-top: 3px;
+  margin-top: 0px;
 }
 
 .actions {
   margin-top: 20px;
+}
+
+.brand {
+  height: 45px;
 }

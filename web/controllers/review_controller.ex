@@ -6,13 +6,15 @@ defmodule Reviewq.ReviewController do
   plug :scrub_params, "review" when action in [:create, :update]
 
   def index(conn, %{"status" => status}) do
+    changeset = Review.changeset(%Review{})
     reviews = Repo.all(from r in Review, where: r.status == ^status, order_by: [desc: :inserted_at])
-    render(conn, "index.html", reviews: reviews, status: status)
+    render(conn, "index.html", reviews: reviews, status: status, changeset: changeset)
   end
 
   def index(conn, _params) do
+    changeset = Review.changeset(%Review{})
     reviews = Repo.all(from r in Review, order_by: [desc: :inserted_at])
-    render(conn, "index.html", reviews: reviews, status: "All")
+    render(conn, "index.html", reviews: reviews, status: "All", changeset: changeset)
   end
 
   def new(conn, _params) do

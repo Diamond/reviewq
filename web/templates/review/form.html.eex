@@ -11,6 +11,15 @@
   <% end %>
 
   <div class="form-group">
+    <%= text_input f, :github_link, class: "form-control", placeholder: "Github Link" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :status, "Status", class: "control-label" %>
+    <%= select f, :status, valid_statuses, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
     <%= text_input f, :subject, class: "form-control", placeholder: "Subject" %>
   </div>
 
@@ -23,20 +32,11 @@
   </div>
 
   <div class="form-group">
-    <%= text_input f, :github_link, class: "form-control", placeholder: "Github Link" %>
-  </div>
-
-  <div class="form-group">
     <%= text_input f, :requested_by, class: "form-control", placeholder: "Requested By" %>
   </div>
 
   <div class="form-group">
     <%= text_input f, :reviewed_by, class: "form-control", placeholder: "Reviewed By" %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :status, "Status", class: "control-label" %>
-    <%= select f, :status, valid_statuses, class: "form-control" %>
   </div>
 
   <div class="form-group">

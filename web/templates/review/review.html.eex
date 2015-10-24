@@ -1,6 +1,6 @@
 <div class="review row">
   <div class="header bg-primary text-center">
-    <%= @review.subject %>
+    <%= @review.subject || @review.github_link %>
   </div>
   <div class="body bg-info">
     <div class="row">
@@ -16,12 +16,16 @@
       <%= @review.description %>
     </div>
     <div class="row links">
-      <div class="col-xs-6 text-left">
-        Github Link: <%= link @review.github_link, to: @review.github_link %>
-      </div>
-      <div class="col-xs-6 text-right">
-        Tracker Link: <%= link @review.tracker_link, to: @review.tracker_link %>
-      </div>
+      <%= if @review.github_link do %>
+        <div class="col-xs-6 text-left">
+          Github Link: <%= link @review.github_link, to: @review.github_link %>
+        </div>
+      <% end %>
+      <%= if @review.tracker_link do %>
+        <div class="col-xs-6 text-right">
+          Tracker Link: <%= link @review.tracker_link, to: @review.tracker_link %>
+        </div>
+      <% end %>
     </div>
     <div class="row footer">
       <div class="col-xs-6">

@@ -13,8 +13,8 @@ defmodule Reviewq.Review do
     timestamps
   end
 
-  @required_fields ~w(subject github_link status requested_by)
-  @optional_fields ~w(tracker_link reviewed_by description)
+  @required_fields ~w(github_link status)
+  @optional_fields ~w(subject tracker_link reviewed_by description requested_by)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
