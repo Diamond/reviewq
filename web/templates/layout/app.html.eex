@@ -24,7 +24,9 @@
           <li><%= link "Pending",  to: review_path(@conn, :index, %{"status" => "Pending"}) %></li>
           <li><%= link "Approved", to: review_path(@conn, :index, %{"status" => "Approved"}) %></li>
           <li><%= link "Rejected", to: review_path(@conn, :index, %{"status" => "Rejected"}) %></li>
-          <li><%= link "Sign In", to: "/", class: "red" %></li>
+          <!--
+            <li><%= link "Sign In", to: "/", class: "red" %></li>
+          -->
         </ul>
       </div>
     </nav>
